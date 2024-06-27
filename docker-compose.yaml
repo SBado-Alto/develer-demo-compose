@@ -10,7 +10,7 @@ services:
     tty: true
 
   teleop-control:
-    build: ./teleop-control
+    build: ./react-go-embed
     image: teleop-control
     container_name: teleop-control
     ports:
