@@ -1,0 +1,17 @@
+services:
+  valkyrie:
+    build:
+      context: ./dev-dockerfiles/develer-demo-sim
+      args:
+        ros_distro: ${ROS_DISTRO}
+    image: develer/ros:${ROS_DISTRO}
+    container_name: valkyrie
+    stdin_open: true
+    tty: true
+
+  teleop-control:
+    build: ./teleop-control
+    image: teleop-control
+    container_name: teleop-control
+    ports:
+      - 8080:8080
